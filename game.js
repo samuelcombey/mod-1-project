@@ -1,21 +1,23 @@
-var playerSpeed = 15;
+alert(`w and s for left player || up and down for right player`)
 
-function nfp(urpx) {
+const playerSpeed = 15;
+
+nfp = (urpx) => {
     return Number(urpx.replace("px", ""))
 }
 
-var rightPlayer = document.getElementById('right');
-var leftPlayer = document.getElementById('left');
-var b = document.getElementById('ball');
+const $rightPlayer = document.getElementById('right');
+const $leftPlayer = document.getElementById('left');
+const $gameBall = document.getElementById('ball');
 
-var leftScore = document.getElementById('scoreleft');
-var rightScore = document.getElementById('scoreright');
-var ogoal = document.getElementById('goal');
+const $leftScore = document.getElementById('scoreleft');
+const $rightScore = document.getElementById('scoreright');
+const $ogoal = document.getElementById('goal');
 
-var w = window.innerWidth;
-var h = window.innerHeight;
+const $windowWidth = window.innerWidth;
+const $windowHeight = window.innerHeight;
 
-var map = []; // Or you could call it "key"
+const map = []; // Or you could call it "key"
 onkeydown = onkeyup = function(e) {
     e = e || event; // to deal with IE
     map[e.keyCode] = e.type == 'keydown';
@@ -24,40 +26,40 @@ onkeydown = onkeyup = function(e) {
 
 
 
-function keydown() {
+keydown = () => {
     //if key was up arrow
     if (map[40]) {
-        if (nfp(rightPlayer.style.top) + playerSpeed > h - 200)
-            rightPlayer.style.top = h - 200 + "px";
+        if (nfp($rightPlayer.style.top) + playerSpeed > $windowHeight - 200)
+            $rightPlayer.style.top = $windowHeight - 200 + "px";
         else
-            rightPlayer.style.top = nfp(rightPlayer.style.top) + playerSpeed + "px";
+            $rightPlayer.style.top = nfp($rightPlayer.style.top) + playerSpeed + "px";
     }
 
 
 
     //if key was down arrow
     else if (map[38]) {
-        if (nfp(rightPlayer.style.top) - playerSpeed < 0)
-            rightPlayer.style.top = 0 + "px";
+        if (nfp($rightPlayer.style.top) - playerSpeed < 0)
+            $rightPlayer.style.top = 0 + "px";
         else
-            rightPlayer.style.top = nfp(rightPlayer.style.top) - playerSpeed + "px";
+            $rightPlayer.style.top = nfp($rightPlayer.style.top) - playerSpeed + "px";
     }
 
 
     //if key was s
     if (map[83]) {
-        if (nfp(leftPlayer.style.top) + playerSpeed > h - 200)
-            leftPlayer.style.top = h - 200 + "px";
+        if (nfp($leftPlayer.style.top) + playerSpeed > $windowHeight - 200)
+            $leftPlayer.style.top = $windowHeight - 200 + "px";
         else
-            leftPlayer.style.top = nfp(leftPlayer.style.top) + playerSpeed + "px";
+            $leftPlayer.style.top = nfp($leftPlayer.style.top) + playerSpeed + "px";
     }
 
     //if key was w
     else if (map[87]) {
-        if (nfp(leftPlayer.style.top) - playerSpeed < 0)
-            leftPlayer.style.top = 0 + "px";
+        if (nfp($leftPlayer.style.top) - playerSpeed < 0)
+            $leftPlayer.style.top = 0 + "px";
         else
-            leftPlayer.style.top = nfp(leftPlayer.style.top) - playerSpeed + "px";
+            $leftPlayer.style.top = nfp($leftPlayer.style.top) - playerSpeed + "px";
     }
 
     //40 down, 38 up
@@ -68,29 +70,29 @@ function keydown() {
 var speedx = 3,
     speedy = 1;
 var balltime = 1;
-b.style.left = w / 2 + "px";
+$gameBall.style.left = $windowWidth / 2 + "px";
 
-function ball() {
-    b.style.left = nfp(b.style.left) + speedx + "px";
-    b.style.top = nfp(b.style.top) + speedy + "px";
+ball = () => {
+    $gameBall.style.left = nfp($gameBall.style.left) + speedx + "px";
+    $gameBall.style.top = nfp($gameBall.style.top) + speedy + "px";
 }
 
 
 
 
-function moveball() {
+moveball = () => {
     ball();
 
     //remove overflow y
-    if (h < nfp(b.style.top) + 20 || nfp(b.style.top) < 0) {
+    if ($windowHeight < nfp($gameBall.style.top) + 20 || nfp($gameBall.style.top) < 0) {
         speedy *= -1;
     }
 
     //overflow-x right
-    if (nfp(b.style.left) >= w - 50) {
-        if (nfp(rightPlayer.style.top) <= nfp(b.style.top) + 20 && nfp(rightPlayer.style.top) + 200 >= nfp(b.style.top)) {
+    if (nfp($gameBall.style.left) >= $windowWidth - 50) {
+        if (nfp($rightPlayer.style.top) <= nfp($gameBall.style.top) + 20 && nfp($rightPlayer.style.top) + 200 >= nfp($gameBall.style.top)) {
             speedx *= -1;
-        } else if (nfp(b.style.left) >= w - 20)
+        } else if (nfp($gameBall.style.left) >= $windowWidth - 20)
             goal('left');
     }
 
@@ -98,10 +100,10 @@ function moveball() {
 
 
     //remove overflow x in left ir get the goal in left
-    if (nfp(b.style.left) <= 30) {
-        if (nfp(leftPlayer.style.top) <= nfp(b.style.top) + 20 && nfp(leftPlayer.style.top) + 200 >= nfp(b.style.top)) {
+    if (nfp($gameBall.style.left) <= 30) {
+        if (nfp($leftPlayer.style.top) <= nfp($gameBall.style.top) + 20 && nfp($leftPlayer.style.top) + 200 >= nfp($gameBall.style.top)) {
             speedx *= -1;
-        } else if (nfp(b.style.left) <= 0)
+        } else if (nfp($gameBall.style.left) <= 0)
             goal('right');
     }
 
@@ -120,22 +122,21 @@ setInterval(function() {
 }, 10);
 moveball();
 
-function goal(pos) {
+goal = (pos) => {
 
-    ogoal.style.color = "white";
+    $ogoal.style.color = "white";
 
     setTimeout(function() {
-        ogoal.style.color = "black"
+        $ogoal.style.color = "black"
     }, 1000);
 
     if (pos == "left")
-        leftScore.innerHTML = Number(leftScore.innerHTML) + 1;
+        $leftScore.innerHTML = Number($leftScore.innerHTML) + 1;
     else
-        rightScore.innerHTML = Number(rightScore.innerHTML) + 1;
+        $rightScore.innerHTML = Number($rightScore.innerHTML) + 1;
 
 
     speedx *= -1;
-    b.style.left = w / 2 + "px";
-
+    $gameBall.style.left = $windowWidth / 2 + "px";
 
 }
