@@ -2,48 +2,46 @@ alert(`w and s for left player || up and down for right player`)
 
 const playerSpeed = 25;
 
-numberOfPx = (urpx) => {
-    return Number(urpx.replace("px", ""))
-}
+$(() => {
 
-const $rightPlayer = document.getElementById('right');
-const $leftPlayer = document.getElementById('left');
-const $gameBall = document.getElementById('ball');
+    numberOfPx = (urpx) => {
+        return Number(urpx.replace("px", ""))
+    }
 
-const $leftScore = document.getElementById('scoreleft');
-const $rightScore = document.getElementById('scoreright');
-const $ogoal = document.getElementById('goal');
+    const $rightPlayer = document.getElementById('right');
+    const $leftPlayer = document.getElementById('left');
+    const $gameBall = document.getElementById('ball');
 
-const $windowWidth = window.innerWidth;
-const $windowHeight = window.innerHeight;
+    const $leftScore = document.getElementById('scoreleft');
+    const $rightScore = document.getElementById('scoreright');
+    const $ogoal = document.getElementById('goal');
 
-const map = []; // Or you could call it "key"
-onkeydown = onkeyup = function(e) {
-    e = e || event; // to deal with IE
-    map[e.keyCode] = e.type == 'keydown';
-    /*insert conditional here*/
-}
+    const $windowWidth = window.innerWidth;
+    const $windowHeight = window.innerHeight;
 
-
-
-keydown = () => {
-    //if key was up arrow
-    if (map[40]) {
-        if (numberOfPx($rightPlayer.style.top) + playerSpeed > $windowHeight - 200)
-            $rightPlayer.style.top = $windowHeight - 200 + "px";
-        else
-            $rightPlayer.style.top = numberOfPx($rightPlayer.style.top) + playerSpeed + "px";
+    const map = []; // Or you could call it "key"
+    onkeydown = onkeyup = function(e) {
+        e = e || event; // to deal with IE
+        map[e.keyCode] = e.type == 'keydown';
+        /*insert conditional here*/
     }
 
 
 
-    //if key was down arrow
-    else if (map[38]) {
-        if (numberOfPx($rightPlayer.style.top) - playerSpeed < 0)
-            $rightPlayer.style.top = 0 + "px";
-        else
-            $rightPlayer.style.top = numberOfPx($rightPlayer.style.top) - playerSpeed + "px";
-    }
+    keyPressed = () => {
+        //if key was up arrow
+        if (map[40]) {
+            if (numberOfPx($rightPlayer.style.top) + playerSpeed > $windowHeight - 200)
+                $rightPlayer.style.top = $windowHeight - 200 + "px";
+            else
+                $rightPlayer.style.top = numberOfPx($rightPlayer.style.top) + playerSpeed + "px";
+        }//if key was down arrow
+        else if (map[38]) {
+            if (numberOfPx($rightPlayer.style.top) - playerSpeed < 0)
+                $rightPlayer.style.top = 0 + "px";
+            else
+                $rightPlayer.style.top = numberOfPx($rightPlayer.style.top) - playerSpeed + "px";
+        }
 
 
     //if key was s
@@ -118,7 +116,7 @@ moveball = () => {
 
 
 setInterval(function() {
-    keydown();
+    keyPressed();
 }, 10);
 moveball();
 
@@ -140,3 +138,4 @@ goal = (pos) => {
     $gameBall.style.left = $windowWidth / 2 + "px";
 
 }
+})
