@@ -4,7 +4,7 @@ const playerSpeed = 25;
 
 $(() => {
 
-    var timer = 
+    var timer
 
     numberOfPx = (urpx) => {
         return Number(urpx.replace("px", ""))
@@ -12,10 +12,12 @@ $(() => {
 
     const $rightPlayer = document.getElementById('right');
     const $leftPlayer = document.getElementById('left');
+
     const $gameBall = document.getElementById('ball');
 
     const $leftScore = document.getElementById('scoreleft');
     const $rightScore = document.getElementById('scoreright');
+
     const $ogoal = document.getElementById('goal');
 
     const $windowWidth = window.innerWidth;
@@ -28,7 +30,6 @@ $(() => {
         map[e.keyCode] = e.type == 'keydown';
         /*insert conditional here*/
     }
-
 
 
     keyPressed = () => {
@@ -117,7 +118,7 @@ $(() => {
     }, 10);
     moveball();
 
-    
+
     goal = (positonBallHit) => {
 
         $ogoal.style.color = "white";
@@ -136,4 +137,4 @@ $(() => {
         $gameBall.style.left = $windowWidth / 2 + "px";
 
     }
-})
+}, )
