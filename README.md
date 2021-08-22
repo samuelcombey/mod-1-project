@@ -8,8 +8,7 @@ _____
 
 Installation
 _____________
-git
-    git clone https://github.com/combeysamuel/mod-1-project.git
+git clone https://github.com/combeysamuel/mod-1-project.git
 
 Play Game Online
 _____________
