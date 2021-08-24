@@ -16,4 +16,4 @@ https://combeysamuel.github.io/mod-1-project/
 
 _______
 Screen Shot
-![Screen Shot](http://up.0se.ir/uploads/eea2bcd1f275502bbe9d27a998af45e50da30709.png)
+![Screen Shot](https://drive.google.com/file/d/1qoPwg_bNgXSDbAeoRelRsmUXBmB302Df/view?usp=sharing)
