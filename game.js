@@ -25,6 +25,7 @@ $(() => {
                 $won.html(`Left Player Won!!!!!!`)
             }
 
+            // Reload dom to restart a new game
             $button.click(function() {
                 location.reload()
             })
