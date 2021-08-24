@@ -19,7 +19,7 @@ Screen Shot
 https://drive.google.com/file/d/1qoPwg_bNgXSDbAeoRelRsmUXBmB302Df/view
 
 _______
-Bugs!! To FIX!
+Bug(s)!! To FIX!
 * Ball hiding behide player bars
 
 ______
