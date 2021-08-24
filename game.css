@@ -42,3 +42,9 @@ body {
     transition: 1.5s all;
     display: inline-block;
 }
+
+.timer {
+    font-size: 1000%;
+    display: inline-block;
+    color: white;
+}
