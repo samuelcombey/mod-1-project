@@ -3,7 +3,7 @@ NW JS Final Project Code
 
 https://github.com/combeysamuel/mod-1-project.git
 
-Simple two player Ping Pong game made with pure Javascript, jQuery and CSS
+Simple two player Ping Pong game made with Javascript and CSS
 _____
 Installation
 
