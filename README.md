@@ -20,11 +20,11 @@ https://drive.google.com/file/d/1qoPwg_bNgXSDbAeoRelRsmUXBmB302Df/view
 
 _______
 Bug(s)!! To FIX!
-* Ball hiding behide player bars
+* Prevent ball from hiding behide player bars
 
 ______
 Features Like To Add
 * Draw State
 * Button to resume if Draw State is true
 * Smooth Animations
-* Take userInput to set timer
+* Take userInput to set countdown timer
