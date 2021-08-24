@@ -1,17 +1,45 @@
 alert(`w and s for left player || up and down for right player`)
 
-const $timer = $('.timer')
-$timer
-
-const playerSpeed = 25
+const $playerSpeed = 25
 
 $(() => {
+    const $timer = $('.timer')
+    const $modal = $('.modal').hide()
+    const $button = $('.button')
+    const $won = $('.wonParagraph')
 
-    var timer
+    // Game timer count down
+    var counter =  30// number of seconds to end game
+    var interval = setInterval(function() {
+        counter--
+        // Display 'counter' wherever you want to display it.
+        if (counter <= 0) {
+            clearInterval(interval)
+            $timer.hide(300)
+            $modal.show()
 
+
+            if (Number($rightScore.innerHTML) > Number($leftScore.innerHTML)) {
+                $won.html(`Right Player Won!!!!!`)
+            } else {
+                $won.html(`Left Player Won!!!!!!`)
+            }
+
+            $button.click(function() {
+                location.reload()
+            })
+
+            return
+        } else {
+            $timer.text(counter)
+        }
+    }, 1000)
+
+    
     numberOfPx = (urpx) => {
         return Number(urpx.replace("px", ""))
     }
+
 
     const $rightPlayer = document.getElementById('right')
     const $leftPlayer = document.getElementById('left')
@@ -28,8 +56,6 @@ $(() => {
 
     const key = []
 
-    // right player style top => css styliny 
-    const $rightPlayerST = $rightPlayer.style.top
 
     onkeydown = onkeyup = function(e) {
         e = e || event; // to deal with IE
@@ -43,34 +69,34 @@ $(() => {
 
         //if key pressed was up arrow
         if (key[40]) {
-            if (numberOfPx($rightPlayer.style.top) + playerSpeed > $windowHeight - 200)
+            if (numberOfPx($rightPlayer.style.top) + $playerSpeed > $windowHeight - 200)
                 $rightPlayer.style.top = $windowHeight - 200 + "px"
             else
-                $rightPlayer.style.top = numberOfPx($rightPlayer.style.top) + playerSpeed + "px"
+                $rightPlayer.style.top = numberOfPx($rightPlayer.style.top) + $playerSpeed + "px"
         }
 
         //if key pressed was down arrow
         else if (key[38]) {
-            if (numberOfPx($rightPlayer.style.top) - playerSpeed < 0)
+            if (numberOfPx($rightPlayer.style.top) - $playerSpeed < 0)
                 $rightPlayer.style.top = 0 + "px"
             else
-                $rightPlayer.style.top = numberOfPx($rightPlayer.style.top) - playerSpeed + "px"
+                $rightPlayer.style.top = numberOfPx($rightPlayer.style.top) - $playerSpeed + "px"
         }
 
         //if key pressed was s
         if (key[83]) {
-            if (numberOfPx($leftPlayer.style.top) + playerSpeed > $windowHeight - 200)
+            if (numberOfPx($leftPlayer.style.top) + $playerSpeed > $windowHeight - 200)
                 $leftPlayer.style.top = $windowHeight - 200 + "px"
             else
-                $leftPlayer.style.top = numberOfPx($leftPlayer.style.top) + playerSpeed + "px"
+                $leftPlayer.style.top = numberOfPx($leftPlayer.style.top) + $playerSpeed + "px"
         }
 
         //if key pressed was w
         else if (key[87]) {
-            if (numberOfPx($leftPlayer.style.top) - playerSpeed < 0)
+            if (numberOfPx($leftPlayer.style.top) - $playerSpeed < 0)
                 $leftPlayer.style.top = 0 + "px"
             else
-                $leftPlayer.style.top = numberOfPx($leftPlayer.style.top) - playerSpeed + "px"
+                $leftPlayer.style.top = numberOfPx($leftPlayer.style.top) - $playerSpeed + "px"
         }
 
         //40 down, 38 up

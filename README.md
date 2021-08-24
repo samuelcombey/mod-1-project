@@ -17,3 +17,10 @@ https://combeysamuel.github.io/mod-1-project/
 _______
 Screen Shot
 https://drive.google.com/file/d/1qoPwg_bNgXSDbAeoRelRsmUXBmB302Df/view
+
+_______
+Bugs!! To FIX!
+
+
+______
+Addons sometime

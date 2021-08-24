@@ -23,6 +23,10 @@ body {
     float: right;
 }
 
+#scoreleft, #scoreright {
+    color: black;
+}
+
 #ball {
     position: absolute;
     width: 20px;
@@ -47,4 +51,31 @@ body {
     font-size: 1000%;
     display: inline-block;
     color: red;
+}
+
+.modal {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: darkgrey;
+    z-index: 9999;
+}
+
+button {
+    position: relative;
+    padding: 20px;
+    top: 50%;
+    bottom: 50%;
+}
+
+.wonParagraph {
+    color: black;
+    font-size: 200%;
+    font-weight: bold;
+    padding-top: 20%;
 }
