@@ -1,7 +1,7 @@
 alert(`w and s for left player || up and down for right player`)
 
-const $timer = $('.timer').css('color', 'red').html('0:60')
-
+const $timer = $('.timer')
+$timer
 
 const playerSpeed = 25
 
