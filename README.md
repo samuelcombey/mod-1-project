@@ -15,8 +15,8 @@ Play Game Online
 https://combeysamuel.github.io/mod-1-project/
 
 _______
-Screen Shot
-https://drive.google.com/file/d/1qoPwg_bNgXSDbAeoRelRsmUXBmB302Df/view
+Screen Shot !
+[https://drive.google.com/file/d/1qoPwg_bNgXSDbAeoRelRsmUXBmB302Df/view]
 
 _______
 Bug(s)!! To FIX!
@@ -24,7 +24,6 @@ Bug(s)!! To FIX!
 
 ______
 Features Like To Add
-* Draw State
 * Button to resume if Draw State is true
 * Smooth Animations
 * Take userInput to set countdown timer
