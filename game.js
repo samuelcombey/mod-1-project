@@ -9,11 +9,11 @@ $(() => {
     const $won = $('.wonParagraph')
 
     // Game timer count down
-    var counter =  30// number of seconds to end game
+    var gameTimer =  10// number of seconds to end game
     var interval = setInterval(function() {
-        counter--
+        gameTimer--
         // Display 'counter' wherever you want to display it.
-        if (counter <= 0) {
+        if (gameTimer <= 0) {
             clearInterval(interval)
             $timer.hide(300)
             $modal.show()
@@ -21,6 +21,10 @@ $(() => {
 
             if (Number($rightScore.innerHTML) > Number($leftScore.innerHTML)) {
                 $won.html(`Right Player Won!!!!!`)
+
+            } else if (Number($rightScore.innerHTML) === Number($leftScore.innerHTML)) {
+                $won.html(`NO Player Won!!!!!!!!`)
+
             } else {
                 $won.html(`Left Player Won!!!!!!`)
             }
@@ -32,7 +36,7 @@ $(() => {
 
             return
         } else {
-            $timer.text(counter)
+            $timer.text(gameTimer)
         }
     }, 1000)
 
