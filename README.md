@@ -15,8 +15,7 @@ Play Game Online
 https://combeysamuel.github.io/mod-1-project/
 
 _______
-Screen Shot !
-[https://drive.google.com/file/d/1qoPwg_bNgXSDbAeoRelRsmUXBmB302Df/view]
+[Screen Shot](https://drive.google.com/file/d/1qoPwg_bNgXSDbAeoRelRsmUXBmB302Df/view)
 
 _______
 Bug(s)!! To FIX!
