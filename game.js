@@ -8,15 +8,13 @@ $(() => {
     const $button = $('.button')
     const $won = $('.wonParagraph')
 
-    // Game timer count down
-    var gameTimer =  10// number of seconds to end game
+    var gameTimer =  10 // Game count down timer in seconds
     var interval = setInterval(function() {
         gameTimer--
-        // Display 'counter' wherever you want to display it.
+        // Display 'timer' wherever you want to display it.
         if (gameTimer <= 0) {
             clearInterval(interval)
             $modal.show()
-
 
             if (Number(rightScore.innerHTML) > Number(leftScore.innerHTML)) {
                 $won.html(`Right Player Won!!!!!`)
@@ -69,8 +67,6 @@ $(() => {
 
 
     keyPressed = () => {
-        
-
         //if key pressed was up arrow
         if (key[40]) {
             if (numberOfPx(rightPlayer.style.top) + playerSpeed > windowHeight - 200)
