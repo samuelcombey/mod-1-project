@@ -12,7 +12,7 @@ git clone https://github.com/combeysamuel/mod-1-project.git
 _______
 Play Game Online
 
-https://combeysamuel.github.io/mod-1-project/
+https://samuelcombey.github.io/mod-1-project/
 
 _______
 [Screen Shot](https://drive.google.com/file/d/1qoPwg_bNgXSDbAeoRelRsmUXBmB302Df/view)
